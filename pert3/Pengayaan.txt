@@ -8,3 +8,24 @@ Setelah menyelesaikan kode, jawab pertanyaan berikut:
 5. Mengapa kita perlu menggunakan Inheritance? Apa keuntungan utamanya dibandingkan membuat dua class yang terpisah sama sekali (misal class Karyawan dan class Manajer dibuat terpisah tanpa hubungan)?
 
 Jawaban:
+
+1. fungsi keyword 'extends' dalam deklarasi class Java
+    Keyword extends berfungsi untuk menyatakan hubungan pewarisan (inheritance) antara dua class
+2. perbedaan antara Method Overloading dengan Method Overriding
+    Method Overloading (Pertemuan 2):
+    Konsep: Satu class memiliki banyak method dengan nama yang sama, tetapi parameter berbeda
+    Lokasi: Terjadi di dalam satu class yang sama
+
+    Method Overriding:
+    Konsep: Subclass menulis ulang method yang sudah ada di superclass dengan nama dan parameter yang persis sama, tetapi dengan isi/logika yang berbeda
+    Lokasi: Terjadi antara Parent Class dan Child Class
+3. kegunaan keyword 'super' di dalam constructor subclass (Manajer)
+    Keyword super(...) digunakan untuk memanggil constructor milik class induk (Parent Class)
+4. Jika variabel di class Karyawan diubah access modifier-nya menjadi 'private', apa yang akan terjadi pada class Manajer? Bagaimana solusinya?
+    Akan terjadi Error (Compile Error)
+    Variabel private hanya bisa diakses di dalam class itu sendiri (Karyawan). Class anak (Manajer) tidak bisa melihat variabel tersebut, sehingga kode seperti System.out.println(nama) di Manajer akan gagal
+    Solusi: Mengubah access modifier menjadi protected (seperti yang kita lakukan), agar bisa diakses oleh class anak
+5. Mengapa kita perlu menggunakan Inheritance? Apa keuntungan utamanya
+    a. Mencegah Duplikasi Kode (Code Reusability): Kita tidak perlu menulis ulang variabel nama dan gajiPokok di setiap jenis pegawai baru (misal: Satpam, HRD, Direktur). Cukup tulis sekali di Karyawan, semua otomatis punya
+    b. Kemudahan Maintenance: Jika ada perubahan logika pada Karyawan (misal rumus pajak berubah), kita cukup ubah di satu file induk, dan semua class anak otomatis akan mengikuti perubahannya
+    c. Struktur yang Logis: Inheritance menggambarkan hubungan dunia nyata ("Manajer ADALAH seorang Karyawan"), membuat kode lebih mudah dipahami

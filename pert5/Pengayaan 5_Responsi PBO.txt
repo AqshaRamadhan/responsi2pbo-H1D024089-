@@ -1,7 +1,20 @@
 ﻿SOAL PENGAYAAN (Refleksi Polimorfisme)
 Jawablah pertanyaan berikut:
 1. Apa yang dimaksud dengan polimorfisme dalam OOP? Jelaskan bagaimana metode override bekerja.
+    Jawab
+    a. Polimorfisme (dari bahasa Yunani: poly = banyak, morph = bentuk) adalah kemampuan sebuah objek untuk memiliki "banyak bentuk". Dalam Java, ini berarti sebuah variabel bertipe Parent Class (Induk) bisa digunakan untuk menyimpan objek dari berbagai Subclass (Anak)x
+    b. Cara kerja Override: Ketika sebuah method di-override, Java akan mengganti logika method milik induk dengan logika baru milik anak. Meskipun kita memanggil method tersebut menggunakan variabel bertipe induk, Java akan menjalankan versi method milik objek aslinya (anak)
 2. Mengapa array bertipe DefaultMesin dapat menyimpan objek MesinMotor dan MesinTraktor?
+    Jawab
+    Array bertipe DefaultMesin mampu menyimpan objek MesinMotor dan MesinTraktor karena adanya konsep pewarisan (inheritance) yang membentuk hubungan is-a (adalah), di mana setiap subclass dianggap sebagai bentuk spesifik dari superclass-nya. Hal ini memungkinkan mekanisme upcasting, sehingga variabel atau elemen array yang dideklarasikan dengan tipe induk (DefaultMesin) secara legal dapat mereferensikan objek apa pun yang merupakan turunannya tanpa melanggar aturan tipe data
 3. Apa perbedaan override dan overload?
+    Jawab
+    Perbedaan mendasar keduanya terletak pada lokasi dan struktur parameternya: Overloading terjadi di dalam satu class yang sama di mana nama method sama tetapi daftar parameternya wajib berbeda (bertujuan untuk menambah variasi input atau cara pemanggilan), sedangkan Overriding terjadi antara parent class dan child class di mana nama method beserta parameternya wajib sama persis (bertujuan untuk mengganti atau menimpa logika method warisan agar sesuai dengan perilaku spesifik subclass tersebut)
 4. Apa keuntungan menggunakan polimorfisme dalam sistem inventaris seperti contoh di atas?
+    Jawab
+    a. Efisiensi Kode: Kita tidak perlu membuat array terpisah untuk setiap jenis mesin (misal: arrayMotor, arrayTraktor, dll). Cukup satu array defaultMesin[] untuk menampung semuanya
+    b. Kemudahan Pengelolaan (Looping): Kita bisa memproses semua mesin dalam satu kali looping (for-each)
+    c. Skalabilitas (Mudah Dikembangkan): Jika suatu hari ada mesin baru (misal: mesinPesawat), kita cukup buat class barunya tanpa perlu mengubah kode looping di analisisMesin.java. Program utama akan otomatis mengenali mesin baru tersebut
 5. Bagaimana cara kerja dynamic dispatch pada Java saat memanggil method override?
+    Jawab
+    Dynamic Dispatch (atau Runtime Polymorphism) adalah mekanisme di mana Java menentukan method mana yang harus dijalankan pada saat program berjalan (runtime), bukan saat penulisan kode

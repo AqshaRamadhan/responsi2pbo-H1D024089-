@@ -2,7 +2,19 @@ Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 1. Apa perbedaan antara interface dengan class biasa?
+    Jawab
+    Perbedaan mendasarnya terletak pada implementasi dan tujuan:
+    Class Biasa: Merupakan blueprint atau cetakan objek yang nyata. Class memiliki method yang sudah ada isinya (implementasi logika), memiliki constructor, dan bisa dibuat objeknya secara langsung (new Class()).
+    Interface: Merupakan "kontrak" atau kerangka yang hanya berisi deklarasi method kosong (tanpa body). Interface tidak bisa dibuat objeknya secara langsung, semua variabelnya otomatis bersifat konstanta (public static final), dan digunakan untuk standarisasi perilaku antar-class yang berbeda.
 2. Mengapa interface tidak memiliki implementasi method di dalamnya?
+    Jawab
+    Karena tujuan utama interface adalah untuk mendefinisikan "Apa yang bisa dilakukan", bukan "Bagaimana cara melakukannya". Hal ini menciptakan Abstraksi Penuh. Dengan membiarkan method kosong, Interface memberikan kebebasan penuh kepada setiap class yang menggunakannya untuk menentukan cara kerja method tersebut sesuai kebutuhan spesifik masing-masing, tanpa terikat pada satu logika tertentu
 3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
+    Jawab
+    Keyword implements bertujuan untuk menyatakan bahwa sebuah class menyanggupi untuk mematuhi kontrak yang ada di dalam interface. Ketika class menggunakan implements, class tersebut wajib menuliskan ulang (override) dan memberikan isi kode (body) untuk semua method abstrak yang terdaftar di dalam interface tersebut
 4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
+    Jawab
+    Di Java, sebuah class hanya boleh punya satu induk (extends), tapi boleh punya banyak interface (implements). Ini adalah cara Java mengatasi keterbatasan multiple inheritance
 5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+    jawab
+    Akan terjadi Error (Compile Time Error). Komputer akan menolak untuk menjalankan program karena class tersebut dianggap melanggar kontrak (janjinya belum lunas)

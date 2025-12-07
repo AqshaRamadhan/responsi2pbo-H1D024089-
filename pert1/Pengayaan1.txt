@@ -7,3 +7,24 @@ Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek 
 Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
 
 Jawaban
+1.perbedaan antara fungsi dan prosedur dalam pemrograman berorientasi objek
+    Fungsi (Function):
+    Sebuah method yang menjalankan tugas tertentu dan mengembalikan sebuah nilai (memiliki hasil)
+    Ciri utamanya adalah memiliki tipe data kembalian (seperti int, double, String) di depan nama method dan wajib menggunakan kata kunci return di dalamnya
+
+    Prosedur (Procedure):
+    Sebuah method yang menjalankan serangkaian perintah (aksi) tetapi tidak mengembalikan nilai apa pun
+    Ciri utamanya adalah menggunakan kata kunci void di depan nama method
+
+2.pentingnya menggunakan konstanta dalam suatu kelas dan keuntungannya
+    - Menjaga Integritas Data: Memastikan nilai-nilai penting yang seharusnya tetap (seperti standar medis, nilai Pi, atau konfigurasi sistem) tidak berubah secara tidak sengaja saat program berjalan
+    - Keamanan: Mencegah programmer lain (atau diri kita sendiri di masa depan) mengubah nilai tersebut sembarangan yang bisa merusak logika perhitungan
+    - Keterbacaan Kode: Memberikan nama yang jelas pada sebuah angka. Daripada menulis angka 1.2 di mana-mana (yang membingungkan), lebih baik menulis faktorAktivitas agar tujuannya jelas
+
+3. Yang terjadi: Program akan gagal dikompilasi (Compile Error). Java akan langsung memberitahu bahwa ada kesalahan fatal sebelum program sempat dijalankan
+    Contoh:
+    final double PI = 3.14;
+    PI = 3.55;
+
+4. cara mendefinisikan konstanta dalam bahasa Java
+    Caranya adalah dengan menambahkan kata kunci final sebelum tipe data variabel.
